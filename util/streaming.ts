@@ -227,7 +227,11 @@ export function mountStreamingMessages(
       if ($th_streaming.length > 0) {
         $th_streaming.removeClass('hidden!');
       } else {
+<<<<<<< HEAD
         $('#chat').find('.mes_text').removeClass('hidden!');
+=======
+        $('chat').find('.mes_text').removeClass('hidden!');
+>>>>>>> ef49cc74019348a1696eda4d988d4f4ddc0d1b9b
       }
       states.forEach(({ destroy }) => destroy());
       stop_list.forEach(stop => stop());
