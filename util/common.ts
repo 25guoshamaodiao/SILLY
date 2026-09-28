@@ -45,10 +45,18 @@ export function regexFromString(input: string, replace_macros?: boolean): RegExp
     if (!match) {
       return makeRegex(_.escapeRegExp(input), 'i');
     }
+<<<<<<< HEAD
     if (match[2] && !/^(?!.*?(.).*?\1)[gmixXsuUAJ]+$/.test(match[2])) {
       return makeRegex(input, 'i');
     }
     let flags = (match[2] ?? '').replaceAll('g', '');
+=======
+    if (match[2] && !/^(?!.*?(.).*?\1)[gmixXsuUAJ]+$/.test(match[3])) {
+      return makeRegex(input, 'i');
+    }
+    let flags = match[2] ?? '';
+    _.pull(flags, 'g');
+>>>>>>> 7f92d0b6cabecacd6ca52f5c77d6f18fa6a3b4b9
     if (flags.indexOf('i') === -1) {
       flags = flags + 'i';
     }
