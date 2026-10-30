@@ -202,7 +202,11 @@ export function mountStreamingMessages(
     },
     true,
   );
+<<<<<<< HEAD
   [tavern_events.MESSAGE_EDITED, tavern_events.MESSAGE_DELETED].forEach(event =>
+=======
+  [tavern_events.MESSAGE_EDITED, tavern_events.MESSAGE_SWIPED, tavern_events.MESSAGE_DELETED].forEach(event =>
+>>>>>>> 2a6d5c0d5200986ce6636a49ac7890ffa01c801a
     scopedEventOn(event, message_id => {
       destroyAllInvalid();
       states.get(message_id)?.destroy();
@@ -227,7 +231,11 @@ export function mountStreamingMessages(
       if ($th_streaming.length > 0) {
         $th_streaming.removeClass('hidden!');
       } else {
+<<<<<<< HEAD
         $('#chat').find('.mes_text').removeClass('hidden!');
+=======
+        $('chat').find('.mes_text').removeClass('hidden!');
+>>>>>>> 2a6d5c0d5200986ce6636a49ac7890ffa01c801a
       }
       states.forEach(({ destroy }) => destroy());
       stop_list.forEach(stop => stop());
